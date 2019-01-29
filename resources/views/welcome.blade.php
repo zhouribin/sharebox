@@ -56,6 +56,10 @@
                 <div class="title m-b-md">
                     Share Box
                 </div>
+                <div class="links">
+                    <a href="{{ url('/home') }}">首页</a>
+                </div>
             </div>
+
     </div>
 @endsection

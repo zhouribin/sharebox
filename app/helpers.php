@@ -27,17 +27,22 @@ function getExceptionInfo(Exception $e)
 
 /**
  * 记录日志
- * @param $logName
+ * @param $loggerName
  * @return \Monolog\Logger
  */
-function customerLoggerHandle($logName)
+function customerLoggerHandle($loggerName)
 {
-    $logName = $logName . "-" . exec('whoami');
-    $log = new \Monolog\Logger($logName);
-    $logFilePath = storage_path('logs') . "/" . $logName . ".log";
-    $log->pushHandler(new RotatingFileHandler($logFilePath, 0, Logger::DEBUG));
+    $loggerName = $loggerName . "-" . exec('whoami');
+    $logger = new \Monolog\Logger($loggerName);
+    $loggerFilePath = storage_path('logs') . "/" . $loggerName . ".log";
+    $logger->pushHandler(
+        new RotatingFileHandler(
+            $loggerFilePath, 0,
+            env('LOGGER_LEVEL', Logger::DEBUG)
+        )
+    );
 
-    return $log;
+    return $logger;
 }
 
 /**
