@@ -8,7 +8,7 @@ Share-Box 是一个基于微信小程序分享的工具类应用.
 
 ## 前端案例
 
-白水的Github [https://github.com/ruanxiaoquan]
+WhiteWater的Github [https://github.com/ruanxiaoquan]
 
 ## License
 
